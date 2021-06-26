@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar App Vanilla JS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body onload="loadEvents()">
+    <button id="today_button" onclick="today()">Today</button>
+    <button id="svg_button" onclick="filter(0)">SVG Reddy</button>
+    <button id="rama_button" onclick="filter(1)">P Rama devi</button>
+    <button id="soujanya_button" onclick="filter(2)">B Soujanya</button>
+    <button id="praneel_button" onclick="filter(3)">Praneel</button>
+    <button id="clear_button" onclick="clear_filter()">Clear</button>
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div id="yearDisplay"></div>
+        <div>
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+
+      <div id="calendar"></div>
+      <div class="addIcon" onclick="addEve()">
+        <!-- <span class="material-icons-outlined"> control_point </span> -->
+        <i class="material-icons md-48">control_point</i>
+      </div>
+    </div>
+
+    <div id="newEventModal">
+      <h2>Add Class</h2>
+      <!-- <input class="Test" id="eventTitleInput" type="date" /> -->
+      <input class="Test" id="eventTitleInput" placeholder="Event Title" />
+      <!-- <input
+        class="Test"
+        id="eventTitleInput"
+        type="text"
+        placeholder="Teacher's name"
+      /> -->
+      <select class="Test" id="eventTitleInput">
+        <option>SVG Reddy</option>
+        <option>P Rama Devi</option>
+        <option>B Soujanya</option>
+        <option>Praneel</option>
+      </select>
+
+      <button id="saveButton" onclick="insertComment()">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"><strong>Subject: </strong><span id="subject"></span></p>
+      <p id="eventTeacher">
+        <strong>Teacher: </strong><span id="teacher"></span>
+      </p>
+
+      <button id="deleteButton" onclick="deleteComment()">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
